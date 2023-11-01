@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+{% block title %}
+Become a Teacher    
+{% endblock title %}
+
+{% block content  %}
+<!-- team-details-start -->
+<section class="become-team">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-7 wow fadeInUp animated" data-wow-delay="300ms">
+                <div class="become-team__content">
+                    <h3 class="become-team__title">Teacher Rules</h3>
+                    <ul class="become-team__list">
+                        <li>Teacher Qualification: Teachers must possess the necessary qualifications and expertise in the subjects they intend to teach.</li> 
+                        <li>Professional Conduct: Teachers are expected to maintain professionalism in all interactions with students and fellow educators.</li>
+                        <li>Respect for Diversity: Teachers should foster an inclusive and respectful learning environment, respecting the diverse backgrounds and perspectives of students.</li>
+                        <li>Original Content: All teaching materials and content shared by teachers should be original or used within the bounds of copyright law.</li>
+                        <li>Non-Discrimination: Discrimination on the basis of race, gender, religion, or any other personal attributes is strictly prohibited.</li>
+                        <li>Timely Communication: Teachers should respond to student inquiries and messages in a timely manner.</li>
+
+
+
+
+
+                    </ul>
+                    <h3 class="become-team__title">Areas of Expertise</h3>
+                    <p class="become-team__text">
+                        <li>Subject Expertise: Teachers must specify the subjects or topics they are qualified to teach.</li>
+                        <li>Certifications: Teachers should list any relevant certifications or qualifications in their respective fields.</li>
+                        <li>Teaching Experience: Teachers should provide information about their prior teaching experience, including the duration and any notable achievements.</li>
+
+                    </p>
+                    <h3 class="become-team__title">Education</h3>
+                    <p class="become-team__text">
+                       <li>Educational Background: Teachers should provide details of their educational background, including degrees, institutions, and years of study.</li>
+                       <li>
+                        Professional Development: Information about any ongoing professional development or training relevant to their area of expertise.</li>
+                       <li>
+                        Teaching Approach: A brief description of the teacher's preferred teaching approach, methods, or philosophies.</li>
+                       <li>
+                        Continual Learning: Commitment to staying current in their field of expertise and adopting best practices in education.</li>
+                    </p>
+                </div>
+            </div>             
+        <div class="col-lg-5 wow fadeInUp animated" data-wow-delay="400ms">
+            <div class="become-team__form-box">
+                <h3 class="become-team__form-box__title">Submit Your Latest Project</h3>
+              
+                <center>{% if messages %}
+                    {% for message in messages %}
+                    {% if message.tags == "error" %}
+                    <div class="alert alert-danger" role="alert">
+                    {{message}}
+                    </div>
+                    {% else %}
+                    <div class="alert alert-success" role="alert">
+                    {{message}}
+                    </div>
+                    {% endif %}
+                    {% endfor%}
+                    {% endif %}
+                </center>                             
+                    
+                <form method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {{ form|crispy }}
+                    <div class="become-team__btn-box">
+                        <button type="submit" class="eduact-btn eduact-btn-second"><span class="eduact-btn__curve"></span>Submit<i class="icon-arrow"></i></button>
+                    </div>
+                </form>               
+                                 
+            </div>
+        </div>
+
+         
+        </div>
+    </div>
+</section>
+<!-- team-details-end-->
+    
+{% endblock content  %}
+    
+
+    

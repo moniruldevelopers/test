@@ -1,0 +1,97 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+{% block title %}
+        Contact-page
+{% endblock title %}
+
+
+{% block content %}
+
+<section class="contact-one">
+    <div class="container wow fadeInUp" data-wow-delay="300ms">
+        <div class="section-title  text-center">
+            <h5 class="section-title__tagline">
+                Contact with Us
+                <svg class="arrow-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 55 13">
+                    <g clip-path="url(#clip0_324_36194)">
+                        <path d="M10.5406 6.49995L0.700562 12.1799V8.56995L4.29056 6.49995L0.700562 4.42995V0.819946L10.5406 6.49995Z" />
+                        <path d="M25.1706 6.49995L15.3306 12.1799V8.56995L18.9206 6.49995L15.3306 4.42995V0.819946L25.1706 6.49995Z" />
+                        <path d="M39.7906 6.49995L29.9506 12.1799V8.56995L33.5406 6.49995L29.9506 4.42995V0.819946L39.7906 6.49995Z" />
+                        <path d="M54.4206 6.49995L44.5806 12.1799V8.56995L48.1706 6.49995L44.5806 4.42995V0.819946L54.4206 6.49995Z" />
+                    </g>
+                </svg>
+            </h5>
+            <h2 class="section-title__title">Feel Free to Write us Anytime</h2>
+        </div><!-- section-title -->
+        <div class="contact-one__form-box ">
+            <center>            
+                {% if messages %}
+                {% for message in messages %}
+                {% if message.tags == "error" %}
+                <div class="alert alert-danger" role="alert">
+                {{message}}
+                </div>
+                {% else %}
+                <div class="alert alert-success" role="alert">
+                   {{message}}
+                  </div>
+                {% endif %}
+                {% endfor%}
+                {% endif %}
+                </center>
+        
+            <form method='POST' >
+                {% csrf_token %}
+                {{ form|crispy }}
+                <div class="contact-one__btn-box">
+                    <button type="submit" class="eduact-btn eduact-btn-second"><span class="eduact-btn__curve"></span>Send a Message<i class="icon-arrow"></i></button>
+                </div>
+            </form>
+
+            
+        </div>
+    </div>
+</section>
+<!-- Contact End -->
+
+
+
+{% for cm in cm %}
+    
+
+
+<!-- Info Start -->
+<section class="contact-info">
+    <div class="container">        
+            
+        <ul class="contact-info__wrapper">
+            <li>
+                <div class="contact-info__icon"><span class="icon-Call"></span></div>
+                <p class="contact-info__title">Have any question?</p>
+                <h4 class="contact-info__text">Free <a  href="tel:{{cm.company_phone}}">{{cm.company_phone}}</a></h4>
+            </li>
+            <li class="active">
+                <div class="contact-info__icon"><span class="icon-Email"></span></div>
+                <p class="contact-info__title">Send Email</p>
+                <h4 class="contact-info__text"><a style="font-size: 20px;"  href="mailto:{{cm.company_email}}">{{cm.company_email}}</a></h4>
+            </li>
+            <li>
+                <div class="contact-info__icon"><span class="icon-Location"></span></div>
+                <p class="contact-info__title">Visit Anytime</p>
+                <h4 class="contact-info__text"><a style="font-size: 15px;"  href="#">{{cm.address}}</a></h4>
+            </li>
+        </ul>
+
+    </div>
+</section>
+<!-- Info End -->
+<!--Google Map Start-->
+<section class="google-map">
+    <iframe src="{{cm.google_map}}" class="google-map__one" allowfullscreen></iframe>
+</section>
+<!--Google Map End-->
+{% endfor %}
+    
+{% endblock content %}
+    

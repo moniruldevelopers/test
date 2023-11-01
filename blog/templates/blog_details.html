@@ -1,0 +1,111 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+    blog-list page 
+{% endblock title %}
+
+{% block content  %}
+
+<!-- Blog Start -->
+<section class="blog-details">
+    <div class="container">
+        <div class="row">
+            
+            {% for blog in blogs %}
+            <div class="col-xl-8 col-lg-7">
+                <div class="blog-details__content">
+                    <div class="blog-details__img">
+                        <img src="{{blog.image.url}}" alt="{{blog.title}}">
+                    </div><!-- details-image -->
+                    <div class="blog-details__meta">
+                        <div class="blog-details__meta__cats">
+                            <a href="blog-list-right.html">{{blog.category_blog.title}}</a>
+                        </div>
+                        <div class="blog-details__meta__date"><i class="icon-clock"></i>{{blog.published|date:"j M, Y"}}</div>
+                    </div><!-- /.details-meta -->
+                    <h3 class="blog-details__title">{{blog.title}}</h3><!-- details-tiele -->
+                    <p class="blog-details__text">
+                    {{blog.description|safe}}
+                    </p>
+                </div><!-- details-content -->
+                    <div class="blog-details__bottom">
+                                        <!-- AddToAny BEGIN -->
+                            <div class="a2a_kit a2a_kit_size_32 a2a_default_style">
+                                <a class="a2a_dd" href="https://www.addtoany.com/share"></a>
+                                <a class="a2a_button_facebook"></a>
+                                <a class="a2a_button_whatsapp"></a>
+                                <a class="a2a_button_telegram"></a>
+                                <a class="a2a_button_facebook_messenger"></a>
+                                <a class="a2a_button_email"></a>
+                                <a class="a2a_button_linkedin"></a>
+                                </div>
+                                <script async src="https://static.addtoany.com/menu/page.js"></script>
+                                <!-- AddToAny END -->
+                                <br>                      
+                                <div class="hero-banner__btn wow fadeInUp" data-wow-delay="600ms">
+                                    <a href="{% url 'blog_list' %}" class="eduact-btn eduact-btn-second"><i class="icon-arrow-left"></i> <span class="eduact-btn__curve"></span>BACK </a>
+                                </div><!-- banner-btn -->
+                    </div><!-- details-tags-share -->
+
+                </div>
+             {% endfor %}
+          
+            <div class="col-xl-4 col-lg-5 wow fadeInRight" data-wow-delay="300ms">
+                <div class="sidebar">
+                    <div class="sidebar__single sidebar__search">
+                        <form action="#" class="sidebar__search-form">
+                            <input type="search" placeholder="Type Here">
+                            <button type="submit"><span class="icon-Search"></span></button>
+                        </form>
+                    </div><!-- search-widget -->
+
+                    <div class="sidebar__single sidebar__post">
+                        <h3 class="sidebar__title">Latest posts</h3>
+                        <ul class="sidebar__post__list list-unstyled">
+                           
+                           {% for latest in latest_posts %}
+                            <li>
+                                <div class="sidebar__post__image">
+                                    <img style="width: 90px; height: 90px;" src="{{latest.image.url}}" alt="{{latest.title}}">
+                                </div>
+                                <div class="sidebar__post__content">
+                                    <span class="sidebar__post__content__meta"><i class="icon-clock"></i>{{latest.published|date:"j M, Y"}}</span>
+                                    <h3 class="sidebar__post__content__title"><a href="blog-details.html">{{latest.title}}</a></h3>
+                                </div>
+                            </li>
+                            {% endfor %}
+                         
+                        </ul>
+                    </div><!-- latest-post-widget -->
+                    
+                    <div class="sidebar__single sidebar__category">
+                        <h3 class="sidebar__title">Categories</h3>
+                        <ul class="sidebar__category-list list-unstyled">
+                            
+                       
+                            <li><a href="blog-details.html">dsfsdg</a></li>
+                  
+                        </ul>
+                    
+                    </div><!-- category-widget -->
+                    <div class="sidebar__single sidebar__tags">
+                        <h3 class="sidebar__title">Tags</h3>
+                        <div class="sidebar__tags-list">
+                            
+                        <!-- {% for tag in instance.tags.all %}
+                            <li>{{ tag.name }}</li>
+                        {% endfor %} -->
+                            
+                           
+                        </div>
+                    </div><!-- tags-widget -->           
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Blog End -->
+
+    
+{% endblock content  %}
+    

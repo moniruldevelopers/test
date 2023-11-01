@@ -1,0 +1,78 @@
+{% load static %}
+<!-- Category Start -->
+<section class="category-two" style="background-image: url({% static 'assets/images/shapes/category-bg-2.png' %});">
+    <div class="container wow fadeInUp" data-wow-delay="200ms">
+        <div class="section-title text-center">
+            <h5 class="section-title__tagline">
+                Our Categories
+                <svg class="arrow-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 55 13">
+                    <g clip-path="url(#clip0_324_36194)">
+                        <path d="M10.5406 6.49995L0.700562 12.1799V8.56995L4.29056 6.49995L0.700562 4.42995V0.819946L10.5406 6.49995Z" />
+                        <path d="M25.1706 6.49995L15.3306 12.1799V8.56995L18.9206 6.49995L15.3306 4.42995V0.819946L25.1706 6.49995Z" />
+                        <path d="M39.7906 6.49995L29.9506 12.1799V8.56995L33.5406 6.49995L29.9506 4.42995V0.819946L39.7906 6.49995Z" />
+                        <path d="M54.4206 6.49995L44.5806 12.1799V8.56995L48.1706 6.49995L44.5806 4.42995V0.819946L54.4206 6.49995Z" />
+                    </g>
+                </svg>
+            </h5>
+            <h2 class="section-title__title">Favorite Topics To Learn</h2>
+        </div><!-- section-title -->
+        <div class="category-two__slider eduact-owl__carousel owl-theme owl-carousel" data-owl-options='{
+    "items": 4,
+    "margin": 1,
+    "smartSpeed": 700,
+    "loop":true,
+    "autoplay": true,
+    "nav":false,
+    "dots":false,
+    "navText": ["<span class=\"icon-arrow-left\"></span>","<span class=\"icon-arrow\"></span>"],
+    "responsive":{
+        "0":{
+            "items":1
+        },
+        "768":{
+            "items": 2
+        },
+        "992":{
+            "items": 3
+        },
+        "1200":{
+            "items": 4
+        }
+    }
+    }'>
+            <div class="item">
+                <div class="category-two__item">
+                    <div class="category-two__icon">
+                        <span class="icon-portfolio"></span>
+                    </div><!-- /.category-icon -->
+                    <h3 class="category-two__title"><a href="about.html">Business Management</a></h3><!-- /.category-title -->
+                </div><!-- /.category-card-one -->
+            </div>
+            <div class="item">
+                <div class="category-two__item">
+                    <div class="category-two__icon">
+                        <span class="icon-computer-science"></span>
+                    </div><!-- /.category-icon -->
+                    <h3 class="category-two__title"><a href="about.html">Computer Science</a></h3><!-- /.category-title -->
+                </div><!-- /.category-card-one -->
+            </div>
+            <div class="item">
+                <div class="category-two__item">
+                    <div class="category-two__icon">
+                        <span class="icon-chart-up"></span>
+                    </div><!-- /.category-icon -->
+                    <h3 class="category-two__title"><a href="about.html">Personal Development</a></h3><!-- /.category-title -->
+                </div><!-- /.category-card-one -->
+            </div>
+            <div class="item">
+                <div class="category-two__item">
+                    <div class="category-two__icon">
+                        <span class="icon-art"></span>
+                    </div><!-- /.category-icon -->
+                    <h3 class="category-two__title"><a href="about.html">Arts and Design</a></h3><!-- /.category-title -->
+                </div><!-- /.category-card-one -->
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Category End -->
