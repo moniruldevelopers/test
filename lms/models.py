@@ -4,6 +4,21 @@ from django.db.models.signals import pre_delete
 from django.dispatch import receiver
 from django.utils.deconstruct import deconstructible
 
+#for gallery page
+class Gallery(models.Model):
+    title = models.TextField(max_length=300)
+    event_name = models.CharField(max_length=100)
+    created_date = models.DateTimeField(auto_now_add=True)
+    image = models.ImageField(upload_to='gallery/')
+    
+    def __str__(self):
+        return self.event_name
+
+
+
+
+
+
 # register your project model   
 class Register_project(models.Model):
     your_name  = models.CharField(max_length=150, null=False)

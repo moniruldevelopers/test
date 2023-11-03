@@ -6,14 +6,19 @@ from .forms import BeTeacherForm, ContactForm, Register_project_form
 
 # for project register page
 
-
+def gallery(request):
+    gallery  =Gallery.objects.order_by('-created_date')
+    context = {
+        'gallery':gallery,
+    }
+    return render(request, 'components/gallery.html', context)
 
 
 
 
 def home(request): 
     hero_items = Hero.objects.all() 
-    feedback = Student_feedback.objects.order_by('-published')[:3]   
+    feedback = Student_feedback.objects.order_by('-published')[:4]   
     contex = {
         'hero_items':hero_items,
         'feedback':feedback,
