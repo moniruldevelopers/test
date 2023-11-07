@@ -11891,7 +11891,7 @@ body.megamenu-popup-active .mobile-nav__content {
 .main-footer {
   background-color: var(--eduact-black);
   position: relative;
-  padding: 132px 0 120px;
+  padding: 57px 0 37px;
 }
 
 @media (max-width: 767px) {
@@ -12140,7 +12140,7 @@ body.megamenu-popup-active .mobile-nav__content {
 .copyright {
   position: relative;
   background-color: #1F1944;
-  padding: 27px 0 28px;
+  padding: 16px 0 16px;
 }
 
 .copyright__text {

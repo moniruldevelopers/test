@@ -5,14 +5,19 @@ from django.dispatch import receiver
 from django.utils.deconstruct import deconstructible
 
 #for gallery page
+class Event(models.Model):
+    name = models.CharField(max_length=50)
+    def __str__(self):
+        return self.name
+
 class Gallery(models.Model):
     title = models.TextField(max_length=300)
-    event_name = models.CharField(max_length=100)
+    event_name = models.ForeignKey(Event, on_delete=models.CASCADE)
     created_date = models.DateTimeField(auto_now_add=True)
     image = models.ImageField(upload_to='gallery/')
     
     def __str__(self):
-        return self.event_name
+        return self.event_name.name
 
 
 

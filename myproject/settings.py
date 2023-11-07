@@ -30,6 +30,7 @@ INSTALLED_APPS = [
     'lms',
     'blog',
     'course',
+    'quiz',
     #third party apps
     'taggit',
     'ckeditor',

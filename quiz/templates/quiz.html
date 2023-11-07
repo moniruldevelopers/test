@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Quiz page
+{% endblock title %}
+
+{% block content %}
+<style>
+    h1{
+        text-align: center;
+        padding: 10px;
+    }
+    h3{
+        font-weight: bold;
+        color:#4F5DE3;
+        font-family: 'Urbanist', sans-serif;
+    }
+ 
+</style>
+<div class="container">
+    
+    <h1>Quiz List with Category</h1>
+    
+    <div class="row">
+
+        {% for category in categories_with_content %}
+       
+        <div class="col-md-6">          
+            <h3>{{category.title}}</h3>       
+          
+          <hr>
+          <ol>
+            {% for post in post_lists %}
+              {% if post.category == category %}
+                <li>
+                 <h5>{{post.quiz_name}}</h5>
+                  <span><strong>Question: </strong> {{post.question}}</span> ||
+                  <span><strong>Time: </strong> {{post.time}} min</span> ||
+                  <a href="{{ post.quiz_link }}" target="_blank" class="btn btn-danger">Start Quize</a>
+                 
+                  <hr>
+                </li>
+              {% endif %}
+            {% endfor %}
+          </ol> 
+        </div> 
+
+
+        {% endfor %}
+      </div>
+    
+</div>
+    
+
+
+
+{% endblock content %}
+
+    
+    
