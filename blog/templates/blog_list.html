@@ -16,13 +16,7 @@
 <section class="blog-three" style="background-image: url({% static 'assets/images/shapes/blog-bg-3.jpg' %});">
 <div class="container">
 <!-- start search -->
-
-
-
-
-
 <!-- search-widget -->
-
     <div class="section-title text-center wow fadeInUp" data-wow-delay="100ms">
         <h5 class="section-title__tagline">
             Latest Blog
@@ -62,7 +56,7 @@
                             <a href="blog-list-right.html">{{blog.author.name}}</a>
                             {{blog.author.designation}}
                         </div>
-                        <a class="blog-three__rm" href="blog-details-right.html"><span class="icon-arrow"></span></a><!-- /.read-more-btn -->
+                        <a class="blog-three__rm" href="{% url 'blog_details' blog.slug %}"><span class="icon-arrow"></span></a><!-- /.read-more-btn -->
                     </div><!-- /.blog-meta -->
                 </div><!-- /.blog-content -->
             </div><!-- /.blog-card-one -->

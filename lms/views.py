@@ -3,7 +3,7 @@ from django.views.generic import View, ListView
 from .models import *
 from django.contrib import messages
 from .forms import BeTeacherForm, ContactForm, Register_project_form
-
+from blog.models import *
 # for project register page
 
 def gallery(request):
@@ -19,9 +19,12 @@ def gallery(request):
 def home(request): 
     hero_items = Hero.objects.all() 
     feedback = Student_feedback.objects.order_by('-published')[:4]   
+    home_blogs = Blog.objects.order_by('-published')[:3]
+    
     contex = {
         'hero_items':hero_items,
         'feedback':feedback,
+        'blogs':home_blogs,
     }
     return render(request, 'home.html',contex)
 

@@ -43,7 +43,7 @@ class Blog(models.Model):
     title = models.CharField(max_length=250, null=False)
     description = RichTextField(null=False)
     published = models.DateTimeField(auto_now_add=True)
-    slug = models.SlugField(unique=True, blank=True)
+    slug = models.SlugField(max_length=300, unique=True, blank=True)
     tags = TaggableManager()    
     category_blog = models.ForeignKey(Category_blog, on_delete=models.CASCADE)
     author = models.ForeignKey(Author_blog, on_delete=models.CASCADE)

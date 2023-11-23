@@ -8,7 +8,8 @@ urlpatterns = [
     path('',include('lms.urls')),   
     path('course/',include('course.urls')),   
     path('blog/',include('blog.urls')),
-    path('quiz/',include('quiz.urls'))  
+    path('quiz/',include('quiz.urls')), 
+    path('notice/',include('notice.urls')),  
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

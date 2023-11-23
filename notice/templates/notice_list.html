@@ -1,0 +1,109 @@
+{% extends 'base.html' %}
+
+{% block titile %}
+    Notice-Page
+{% endblock titile %}
+
+{% block content %}
+<style>
+    thead th {
+      position: sticky;
+      top: 0;
+      background-color: #1F1944; /* Dark purple color for the header */
+      color: #fff; /* White text for better contrast */
+    }
+
+    tbody tr:nth-child(even) {
+      background-color: #f2f2f2; /* Light gray for even rows */
+    }
+
+    tbody tr:hover {
+      background-color: #e0f7fa; /* Hover color for rows */
+    }
+
+    .btn-view {
+      background-color: #4F5DE3; /* Blue color for the "View" button */
+      color: #fff; /* White text for better contrast */
+    }
+
+    @media(max-width: 576px) {
+      thead th {
+        font-size: 12px; /* Decrease font size for small screens */
+      }
+
+      tbody td {
+        font-size: 14px; /* Decrease font size for small screens */
+      }
+    }
+  </style>
+<div class="container">
+    <div class="section-title wow fadeInUp text-center" data-wow-delay="100ms">
+        <h5 class="section-title__tagline " style="margin-top: 20px;">
+            Notice
+            <svg class="arrow-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 55 13">
+                <g clip-path="url(#clip0_324_36194)">
+                    <path d="M10.5406 6.49995L0.700562 12.1799V8.56995L4.29056 6.49995L0.700562 4.42995V0.819946L10.5406 6.49995Z" />
+                    <path d="M25.1706 6.49995L15.3306 12.1799V8.56995L18.9206 6.49995L15.3306 4.42995V0.819946L25.1706 6.49995Z" />
+                    <path d="M39.7906 6.49995L29.9506 12.1799V8.56995L33.5406 6.49995L29.9506 4.42995V0.819946L39.7906 6.49995Z" />
+                    <path d="M54.4206 6.49995L44.5806 12.1799V8.56995L48.1706 6.49995L44.5806 4.42995V0.819946L54.4206 6.49995Z" />
+                </g>
+            </svg>
+        </h5>
+        <h2 class="section-title__title">Featured Notice On This Month</h2>
+    </div><!-- section-title -->
+</div>
+
+
+<div class="container mt-5">
+    <div class="table-responsive">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th scope="col" style="width: 120px; background-color: #1F1944; color: #fff;" class="text-center">
+              Date
+            </th>
+            <th scope="col" style="width: 150px; background-color: #1F1944; color: #fff;" class="text-center">
+              Notice Title
+            </th>
+            
+            <th scope="col" style="width: 150px; background-color: #1F1944; color: #fff;" class="text-center">
+              Notice By
+            </th>
+            <th scope="col" style="width: 100px; background-color: #1F1944; color: #fff;" class="text-center">
+              For
+            </th>
+            <th scope="col" style="width: 100px; background-color: #1F1944; color: #fff;" class="text-center">
+              View
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Sample data rows (you can replace this with your dynamic data) -->
+        {% for notice in notices %}
+         <tr>
+          <td class="text-center">
+            {{ notice.created_date|date:"m/d/Y" }} | {{ notice.created_time|time:"g:i A" }}
+          </td>
+          <td class="text-center">{{ notice.notice_title }}</td>   
+          <td class="text-center"><strong>{{ notice.notice_by.name }}</strong></td>
+          <td class="text-center"><strong>{{notice.notice_for}}</strong></td>
+          <td class="text-center"><button class="btn btn-view"><a style="color: white;" target="_blank" href="{{notice.file_upload.url}}">View Notice</a></button></td>
+        </tr>
+        {% endfor %}       
+            
+         
+          <!-- Add more rows as needed -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+  
+  <!-- Bootstrap JS and Popper.js (required for some Bootstrap features) -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  
+
+{% endblock content %}
+    
+    

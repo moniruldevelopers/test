@@ -28,7 +28,7 @@
                     </p>
                     <div class="hero-banner__btn wow fadeInUp" data-wow-delay="600ms">
                         <a href="contact.html" class="eduact-btn eduact-btn-second"><span class="eduact-btn__curve"></span>Create Account <i class="icon-arrow"></i></a>
-                        <a href="course.html" class="eduact-btn"><span class="eduact-btn__curve"></span>Find The Course<i class="icon-arrow"></i></a>
+                        <a href="{% url 'course_list' %}" class="eduact-btn"><span class="eduact-btn__curve"></span>Find The Course<i class="icon-arrow"></i></a>
                     </div><!-- banner-btn -->
                 </div><!-- banner-content -->
             </div>
@@ -208,6 +208,59 @@
     </div>
 </section>
 <!-- Course End -->
+
+<div class="section-title text-center wow fadeInUp" data-wow-delay="100ms">
+    <h5 class="section-title__tagline">
+        Latest Blog
+        <svg class="arrow-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 55 13">
+            <g clip-path="url(#clip0_324_36194)">
+                <path d="M10.5406 6.49995L0.700562 12.1799V8.56995L4.29056 6.49995L0.700562 4.42995V0.819946L10.5406 6.49995Z" />
+                <path d="M25.1706 6.49995L15.3306 12.1799V8.56995L18.9206 6.49995L15.3306 4.42995V0.819946L25.1706 6.49995Z" />
+                <path d="M39.7906 6.49995L29.9506 12.1799V8.56995L33.5406 6.49995L29.9506 4.42995V0.819946L39.7906 6.49995Z" />
+                <path d="M54.4206 6.49995L44.5806 12.1799V8.56995L48.1706 6.49995L44.5806 4.42995V0.819946L54.4206 6.49995Z" />
+            </g>
+        </svg>
+    </h5>
+    <h2 class="section-title__title">Latest Updates & Articles</h2>
+</div><!-- section-title -->
+<div class="container">
+<div class="row">    
+    {% if blogs %}  
+    {% for blog in blogs  reversed  %} 
+     <div class="col-xl-4 col-md-6 wow fadeInUp" data-wow-delay="200ms">
+        <div class="blog-three__item">
+            <div class="blog-three__image">
+                <img  style="width: 415px; height: 300px;" src="{{blog.image.url}}" alt="{{blog.title}}">
+                <a href="{% url 'blog_details' blog.slug %}"></a>
+            </div><!-- /.blog-image -->
+            <div class="blog-three__content">
+                <div class="blog-three__top-meta">
+                    <div class="blog-three__cats"><a href="#">{{blog.category_blog.title}}</a></div><!-- /.blog-cats -->
+                    <div class="blog-three__date"><p>{{ blog.published|date:"j M, Y" }}</p>
+                    </div><!-- /.blog-date -->
+                </div>
+                <h3 class="blog-three__title">
+                    <a href="{% url 'blog_details' blog.slug %}">{{blog.title}}</a>
+                </h3><!-- /.blog-title -->
+                <div class="blog-three__meta">
+                    <div class="blog-three__meta__author">
+                        <img src="{{blog.author.image.url}}" alt="eduact" />
+                        <a href="blog-list-right.html">{{blog.author.name}}</a>
+                        {{blog.author.designation}}
+                    </div>
+                    <a class="blog-three__rm" href="{% url 'blog_details' blog.slug %}"><span class="icon-arrow"></span></a><!-- /.read-more-btn -->
+                </div><!-- /.blog-meta -->
+            </div><!-- /.blog-content -->
+        </div><!-- /.blog-card-one -->
+    </div>
+    {% endfor %} 
+    {% else %}
+    <h1 style="text-align: center; color: red;">No blog found </h1>
+    {% endif %}    
+   
+</div>
+</div>
+
 {% include 'components/category.html' %}
 {% include 'components/about_us.html' %}
 
