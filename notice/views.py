@@ -2,7 +2,7 @@ from django.shortcuts import render
 from .models import Notice
 
 def notice_list(request):
-    notices = Notice.objects.all().order_by('-created_date', '-created_time')[:2]
+    notices = Notice.objects.all().order_by('-created_date', '-created_time')[:30]
     context ={
         'notices': notices,
     }

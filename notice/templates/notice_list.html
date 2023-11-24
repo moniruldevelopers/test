@@ -6,6 +6,7 @@
 
 {% block content %}
 <style>
+  
     thead th {
       position: sticky;
       top: 0;
@@ -87,7 +88,7 @@
           <td class="text-center">{{ notice.notice_title }}</td>   
           <td class="text-center"><strong>{{ notice.notice_by.name }}</strong></td>
           <td class="text-center"><strong>{{notice.notice_for}}</strong></td>
-          <td class="text-center"><button class="btn btn-view"><a style="color: white;" target="_blank" href="{{notice.file_upload.url}}">View Notice</a></button></td>
+          <td class="text-center"><button  class="btn btn-view icon-book"><a style="color: white;" target="_blank" href="{{notice.file_upload.url}}">View Notice</a></button></td>
         </tr>
         {% endfor %}       
             

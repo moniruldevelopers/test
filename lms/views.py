@@ -111,3 +111,9 @@ def about(request):
     return render(request, 'about.html',context)
 
 #end about page 
+def faqs(request):
+    questions = FAQS.objects.all()
+    context = {
+        'questions':questions,
+    }
+    return render(request, 'components/faqs.html',context)

@@ -20,5 +20,6 @@ admin.site.register(Company_info)
 admin.site.register(Team_member)
 admin.site.register(Newsletter)
 
-#FOR TEACHER REGISTRATIONS
+#FOR INFO MENUS
 admin.site.register(BeTeacher)
+admin.site.register(FAQS)

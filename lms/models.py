@@ -194,5 +194,9 @@ class Newsletter(models.Model):
 
 
 # end about page 
-
+class FAQS(models.Model):
+    question = models.CharField(max_length=200)
+    answare = models.TextField()
+    def __str__(self):
+        return self.question
 

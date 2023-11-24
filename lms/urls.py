@@ -9,6 +9,7 @@ urlpatterns = [
      path('project_list/', project, name = 'project'),    
      path('project_form/', project_form, name = 'project_form'),    
      path('gallery/', gallery, name = 'gallery'),    
+     path('faqs/', faqs, name = 'faqs'),    
   
    
 ]
