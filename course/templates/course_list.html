@@ -4,6 +4,34 @@
 {% endblock title %} 
 
 {% block content %}
+<!-- search-widget -->
+
+<div class="container section-title text-center wow fadeInUp" data-wow-delay="100ms" style="margin-top: 20px;">
+    <h5 class="section-title__tagline">
+        Course-Section
+        <svg class="arrow-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 55 13">
+            <g clip-path="url(#clip0_324_36194)">
+                <path d="M10.5406 6.49995L0.700562 12.1799V8.56995L4.29056 6.49995L0.700562 4.42995V0.819946L10.5406 6.49995Z" />
+                <path d="M25.1706 6.49995L15.3306 12.1799V8.56995L18.9206 6.49995L15.3306 4.42995V0.819946L25.1706 6.49995Z" />
+                <path d="M39.7906 6.49995L29.9506 12.1799V8.56995L33.5406 6.49995L29.9506 4.42995V0.819946L39.7906 6.49995Z" />
+                <path d="M54.4206 6.49995L44.5806 12.1799V8.56995L48.1706 6.49995L44.5806 4.42995V0.819946L54.4206 6.49995Z" />
+            </g>
+        </svg>
+    </h5>
+    <div   data-wow-delay="300ms" style="margin-top: 30px;">   
+        <form action="#" class="sidebar__search-form">
+            <input type="search" placeholder="Type Course Title Here">
+            <button type="submit"><span class="icon-Search"></span></button>
+        </form> 
+    </div>
+ 
+</div><!-- section-title -->
+
+
+
+
+
+
 <!-- Course Start -->
 <section class="course-two course-two--page">
     <div class="course-two__shape-top wow fadeInRight" data-wow-delay="300ms"><img src="{% static 'assets/images/shapes/course-shape-1.png' %}" alt="eduact"></div>

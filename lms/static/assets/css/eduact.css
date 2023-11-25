@@ -2404,7 +2404,7 @@
 
 .blog-three {
   position: relative;
-  padding: 115px 0 85px;
+  padding: 15px 0 85px;
   background-position: bottom center;
   background-repeat: no-repeat;
   border-top: 1px solid var(--eduact-soft4);
@@ -2412,7 +2412,7 @@
 
 @media (max-width: 767px) {
   .blog-three {
-    padding: 80px 0 45px;
+    padding: 15px 0 45px;
   }
 }
 
@@ -2729,7 +2729,7 @@
   display: block;
   border: none;
   outline: none;
-  background-color: var(--eduact-secondary);
+  background-color: #1f1944;
   box-shadow: none;
   color: var(--eduact-white);
   font-size: 16px;
@@ -3040,12 +3040,12 @@
 /*-- Blog Details --*/
 .blog-details {
   position: relative;
-  padding: 120px 0;
+  padding: 35px 0;
 }
 
 @media (max-width: 767px) {
   .blog-details {
-    padding: 80px 0;
+    padding: 30px 0;
   }
 }
 

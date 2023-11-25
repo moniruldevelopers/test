@@ -9,11 +9,8 @@
 
 <!--Hero Banner Start-->
 <section class="hero-banner" style="background-image: url({% static 'assets/images/shapes/banner-bg-1.png' %});">
-    <div class="container">
-        
-        
-         <div class="row">
-           
+    <div class="container"> 
+        <div class="row">           
             <div class="col-lg-6">               
                 <div class="hero-banner__content">
                     <div class="hero-banner__bg-shape1 wow zoomIn" data-wow-delay="300ms">
@@ -137,6 +134,9 @@
     {% endif %}    
    
 </div>
+<div  style="margin-bottom: 15px;" class="hero-banner__btn wow fadeInUp" data-wow-delay="600ms">
+    <a href="{% url 'course_list' %}" class="eduact-btn eduact-btn-second"><span class="eduact-btn__curve"></span>Browse All <i class="icon-arrow"></i></a>
+</div><!-- banner-btn -->
 </div>
 
 {% include 'components/category.html' %}

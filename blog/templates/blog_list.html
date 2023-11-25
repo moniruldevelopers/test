@@ -29,7 +29,12 @@
                 </g>
             </svg>
         </h5>
-        <h2 class="section-title__title">Latest Updates & Articles</h2>
+        <div   data-wow-delay="300ms" style="margin-top: 30px;">   
+            <form action="#" class="sidebar__search-form">
+                <input type="search" placeholder="Type Blog Title Here">
+                <button type="submit"><span class="icon-Search"></span></button>
+            </form> 
+        </div>
     </div><!-- section-title -->
     <div class="row">
         
@@ -38,7 +43,7 @@
          <div class="col-xl-4 col-md-6 wow fadeInUp" data-wow-delay="200ms">
             <div class="blog-three__item">
                 <div class="blog-three__image">
-                    <img  style="width: 415px; height: 300px;" src="{{blog.image.url}}" alt="{{blog.title}}">
+                    <img  style="height: 300px;" src="{{blog.image.url}}" alt="{{blog.title}}">
                     <a href="{% url 'blog_details' blog.slug %}"></a>
                 </div><!-- /.blog-image -->
                 <div class="blog-three__content">
