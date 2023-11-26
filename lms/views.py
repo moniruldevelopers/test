@@ -18,7 +18,7 @@ def gallery(request):
 
 def home(request): 
     hero_items = Hero.objects.all() 
-    feedback = Student_feedback.objects.order_by('-published')[:4]   
+    feedback = Student_feedback.objects.order_by('-published')[:3]   
     home_blogs = Blog.objects.order_by('-published')[:3]
     
     contex = {
